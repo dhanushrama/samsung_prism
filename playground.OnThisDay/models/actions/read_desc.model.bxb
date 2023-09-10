@@ -1,0 +1,11 @@
+action (read_desc) {
+  type(Fetch)
+  description (reads out the description)
+  collect {
+    input (EventOutput) {
+      type (EventOutput)
+      min (Optional) max (One)
+    }
+  }
+  output (Desc)
+}

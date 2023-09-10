@@ -1,0 +1,27 @@
+structure (EventOutput) {
+  description (events)
+
+
+  property (id){
+    type (id)
+    min(Optional) max(One)
+  }
+  property (title) {
+    type (Title)
+    min (Optional) max (One)
+  }
+  property (imgUrl) {
+    type (ImgUrl)
+    min (Optional) max (One)
+  }
+  property (desc) {
+    type (Desc)
+    min (Optional) max (One)
+  }
+  property (originalLink) {
+    type (OriginalLink)
+    min (Optional) max (One)
+  }
+ 
+
+}

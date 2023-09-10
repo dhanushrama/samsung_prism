@@ -1,0 +1,15 @@
+result-view {
+  match:exception_text (text)
+  {
+    from-output:exception(action)
+  }
+  
+  render{
+    layout-macro (exception_handle){
+      param (exception_text){
+        expression (text)
+      }
+    }
+  }
+  
+}

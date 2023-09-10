@@ -1,0 +1,10 @@
+result-view {
+  match: OriginalLink(this){
+    from-output:openlink
+  }
+  message("")
+   app-launch {
+    payload-uri ("#{value(this)}")
+  }
+  
+}

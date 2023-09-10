@@ -1,0 +1,20 @@
+macro-def(exception_handle) {
+  params {
+    param (exception_text) {
+      type (exception_text)
+      min (Optional)
+      max (One)
+    }
+  }
+
+  content {
+    section {  // this macro returns a "section"
+      content {
+        paragraph {
+          value ("INVALID DATE,PLEASE SEARCH FOR A VALID DATE!!")
+          style (Detail_M)
+        }
+      }
+    }
+  }
+}

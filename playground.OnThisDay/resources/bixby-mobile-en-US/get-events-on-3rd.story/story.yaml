@@ -1,0 +1,16 @@
+data:
+  deviceIsInHandsFreeMode: true
+  enhancedListNavigationSupported: false
+  geo:
+    latitude: 37.3346
+    longitude: -121.891
+  time: '2023-09-01T18:47:17.000Z'
+  tz: America/Los_Angeles
+steps:
+  step-Q9J:
+    step-WBP:
+      step-5RG:
+        step-XHC:
+          step-XV1:
+            step-CEA: ~
+version: 2

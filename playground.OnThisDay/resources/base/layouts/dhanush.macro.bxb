@@ -1,0 +1,31 @@
+macro-def(dhanush) {
+  params {
+    param (link) {
+      type (OriginalLink)
+      min (Required)
+      max (One)
+    }
+  }
+  
+
+  // content {
+  //   section {  // this macro returns a "section"
+  //     content {
+  //       paragraph {
+  //         value ("#{value(events.originalLink)}")
+  //         style (Detail_M)
+  //       }
+  //     }
+  //   }
+  // }
+
+
+  content {
+    if (exists(link) and $handsFree) {
+      template("#{value(link)}")
+    } else {
+      template ("Link to source not found")
+      
+    }
+  }
+}

@@ -1,0 +1,7 @@
+data:
+  sixtree: |-
+    intent {
+      goal { EventOutput$ref (r-Q9J-0) @element (true) }
+    }
+screenshot: screenshot-2023-09-01T18-46-12.912Z-bixby-mobile-en-US-device-s.png
+type: intent

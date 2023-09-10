@@ -1,0 +1,49 @@
+navigation-support {
+  match:EventOutput(events){
+     from-output: search_events
+   }
+  navigation-commands {
+
+
+
+    next {
+      response (next)
+      response (more)
+    }
+
+      previous {
+      response (previous)
+      response (back)
+    }
+
+
+
+    item-selection-confirmation {
+
+      
+      affirmative {
+        response (yes,select them)
+        response (yes,please do select)
+      }
+      negative {
+        response (no)
+      }
+
+    }
+    
+select-none{
+
+}
+// ordinal-selection-patterns {
+//     pattern ("(first)[v:viv.core.OrdinalSelector]")
+//     pattern ("the (first)[v:viv.core.OrdinalSelector] one")
+//     pattern ("result number (one)[v:viv.core.CardinalSelector:1]")
+// }
+next-item-confirmation{
+  affirmative{
+    response (open the original link)
+  }
+}
+  }
+  
+}

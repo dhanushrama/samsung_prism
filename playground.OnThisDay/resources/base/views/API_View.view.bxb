@@ -1,0 +1,133 @@
+result-view
+{
+   match:EventOutput(events){
+     from-output: search_events
+   }
+
+  
+// message("") // override empty string to avoid displaying default result dialog. If you want to debug, you can print `#{value(this.uri)}` here instead
+//   app-launch {
+//     payload-uri ("#{value(events.originalLink[0])}")
+//   }
+  
+
+   
+     render{
+
+       if (size(events)>1){
+         list-of(events){
+
+        navigation-mode{
+          
+          
+          if ($handsFree){
+            read-many{
+              
+              list-summary{
+                template ("#{event(events,'Result')}")
+              
+              }
+              page-content {
+                 underflow-statement (This is the first event.)
+              item-selection-question (which one would you like to choose?)
+              overflow-statement (Those are all the events that meet your search.)
+              overflow-question (Would you like to search another event)
+
+        
+              }
+     
+              
+            }
+          }
+    
+
+
+
+        }
+     
+        
+         
+
+         where-each(event)
+         {
+           
+           if($handsFree){
+           layout-macro (API_Events){
+             param (event){
+               expression (event)
+             }
+           }
+         }
+
+         
+        // spoken-summary{
+        //   template ("#{value(events.desc)}")
+        // }
+         }
+         }
+
+         }
+     
+       
+       if (size(events)==1){
+         
+         layout-macro (API_Layout){
+           param(event){
+             expression (events)
+           }
+           
+           
+         }
+         
+         
+        
+
+
+       }
+       
+    }
+    conversation-drivers{
+      
+      // conversation-driver{
+      //   if (size(events)==1 and $handsFree){
+      //     // template ("dhanush")
+          
+      //     template ("open link")
+      //     template-macro (dhanush){
+      //       param(events)
+      //       {
+      //         expression (events)
+      //       }
+
+      //     }
+
+      //   }
+      // }
+    }
+    // followup{
+    //   prompt {
+    //   dialog (Would you like directions?)
+    //   on-confirm {
+    //     intent {
+    //       goal: OriginalLink
+    //       // value: originallink$expr()
+    //     }
+    //   }
+    //   on-deny {
+    //     message (Okay.)
+    //   }
+    // }
+    // }
+
+
+  
+   
+  }
+
+    
+ 
+
+    
+    
+    
+    

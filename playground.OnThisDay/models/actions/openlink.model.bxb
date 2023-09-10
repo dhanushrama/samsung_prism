@@ -1,0 +1,24 @@
+action (openlink) {
+  type(Search)
+  
+  description (open the link)
+  collect {
+    input (EventOutput) {
+      type (EventOutput)
+      min (Optional) max (One)
+      
+      // default-select {
+      //   with-learning
+      //   with-rule {
+      //     select-first
+      //   }
+      // }
+      default-init{
+        intent:goal:search_events
+      }
+    }
+  }
+  output (OriginalLink)
+  
+ 
+}

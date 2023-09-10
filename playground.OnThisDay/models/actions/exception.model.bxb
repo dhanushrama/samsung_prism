@@ -1,0 +1,6 @@
+action (exception) {
+  // type(Fetch)
+  description (exceptional dates)
+  
+  output (exception_text)
+}

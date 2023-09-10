@@ -1,0 +1,35 @@
+macro-def (API_Events) {
+  params {
+    param (event) {
+      type (EventOutput)
+      min (Required) max (One)
+    }
+  }
+  content {
+    compound-card {
+      content {
+        image-card {
+          aspect-ratio (4:3)
+          title-area {
+            halign (Start)
+            slot1 {
+              text {
+                value ("")
+              }
+            }
+          }
+          image-url ("[#{value(event.imgUrl)}]")
+        }
+        paragraph {
+          value ("#{raw(event.title)}")
+          style (Title_S)
+        }
+        
+      }
+      on-click {
+        view-for (event)
+      }
+    }
+  }
+}
+// list view
